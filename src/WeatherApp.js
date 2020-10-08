@@ -39,7 +39,7 @@ export const WeatherApp = () => {
 
   return (
     <>
-      <AppRouter data={data} />
+      {data&&<AppRouter data={data} /> }
     </>
   )
 }
