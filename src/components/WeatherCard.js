@@ -17,7 +17,7 @@ export const WeatherCard = ({id, data}) => {
   
   return (
     <>
-    <Link style={style} to={process.env.PUBLIC_URL + `/${id}`}>
+    <Link style={style} to={`/${id}`}>
       <div className="card">
         <div className="title">{day}</div>      
         <div className="img-day">

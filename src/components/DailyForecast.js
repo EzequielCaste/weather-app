@@ -11,7 +11,7 @@ export const DailyForecast =  ({data}) => {
 
   if ( !dataItem ) {
     return (
-      <Redirect to={process.env.PUBLIC_URL + '/'} />
+      <Redirect to='/' />
     )
   }
     
@@ -36,7 +36,7 @@ export const DailyForecast =  ({data}) => {
       </div>
     </div>
     <div className="backBtn">
-      <Link to={process.env.PUBLIC_URL + '/'}>
+      <Link to='/'>
         <button>Back</button>
       </Link>
     </div>
