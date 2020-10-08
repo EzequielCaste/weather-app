@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { config } from 'dotenv';
-
 import { AppRouter } from './router/AppRouter';
 import { fetchData } from './helpers/fetchData';
-
-config();
 
 const getCoordinates = () => {
   return new Promise(function(resolve, reject) {

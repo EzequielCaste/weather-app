@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { config } from 'dotenv';
+config();
 
 export const WeatherCard = ({id, data}) => {
  
@@ -15,7 +17,7 @@ export const WeatherCard = ({id, data}) => {
   
   return (
     <>
-    <Link style={style} to={`/weather-app/${id}`}>
+    <Link style={style} to={process.env.PUBLIC_URL + `/${id}`}>
       <div className="card">
         <div className="title">{day}</div>      
         <div className="img-day">

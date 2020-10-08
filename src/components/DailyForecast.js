@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Redirect, useParams } from 'react-router-dom';
+import { config } from 'dotenv';
+config();
 
 export const DailyForecast =  ({data}) => {   
 
@@ -34,7 +36,7 @@ export const DailyForecast =  ({data}) => {
       </div>
     </div>
     <div className="backBtn">
-      <Link to="/weather-app">
+      <Link to={process.env.PUBLIC_URL + '/'}>
         <button>Back</button>
       </Link>
     </div>
