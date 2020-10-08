@@ -1,18 +1,45 @@
-import React from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { DailyForecast } from './components/DailyForecast';
-import { WeeklyForecast } from './components/WeeklyForecast';
+import React, { useEffect, useState } from 'react';
 
-export const WeatherApp = () => {
+import { config } from 'dotenv';
+
+import { AppRouter } from './router/AppRouter';
+import { fetchData } from './helpers/fetchData';
+
+config();
+
+const getCoordinates = () => {
+  return new Promise(function(resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+}
+
+async function getAddress() {
+  const position = await getCoordinates(); 
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude; 
+
+  return {
+    latitude,
+    longitude
+  };  
+}
+
+
+export const WeatherApp = () => {   
+
+  const [data, setData] = useState('');
+
+  useEffect(() => {    
+    getAddress().then( (loc) => {     
+      fetchData(loc).then( data => {
+        setData(data);
+      });
+    })   
+  }, [])
 
   return (
-    <Router>
-    <div className="container">
-      <Switch>
-        <Route exact path="/" component={WeeklyForecast} />
-        <Route path="/:day" component={DailyForecast} />
-      </Switch>
-    </div>
-    </Router>      
+    <>
+      <AppRouter data={data} />
+    </>
   )
 }

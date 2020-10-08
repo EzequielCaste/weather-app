@@ -3,4 +3,7 @@ import ReactDOM from 'react-dom'
 import { WeatherApp } from './WeatherApp';
 import './styles.css'
 
-ReactDOM.render(<WeatherApp />, document.querySelector('#root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <WeatherApp />
+  </React.StrictMode>, document.querySelector('#root'));

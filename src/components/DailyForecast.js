@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-import {data} from '../data';
+export const DailyForecast =  ({data}) => { 
 
-export const DailyForecast = ({ match }) => {
+  let { day } = useParams();   
 
-  const dataItem = data.daily.filter( day => day.dt == match.params.day)[0];
-
+  const dataItem = data.daily.filter( item => item.dt === Number(day))[0];
+    
+  const {humidity, pressure} = dataItem;
   const {min,max} = dataItem.temp;
   const {main,icon,description} = dataItem.weather[0];
-  const date = new Date(dataItem.dt*1000).toDateString();
+  const date = new Date(dataItem.dt*1000).toDateString(); 
 
   return (
     <>
@@ -20,15 +21,17 @@ export const DailyForecast = ({ match }) => {
         <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather"/>
       </div>
       <div className="temps-detail">
-        <p><strong>Humidity:</strong> {dataItem.humidity} % </p>
-        <p><strong>Pressure:</strong> {dataItem.pressure} hPa </p>
-        <p><strong>Min:</strong> {min} °F </p>
-        <p><strong>Max:</strong> {max} °F </p>
+        <p><strong>Humidity:</strong> {humidity} % </p>
+        <p><strong>Pressure:</strong> {pressure} hPa </p>
+        <p><strong>Min:</strong> {min} °C </p>
+        <p><strong>Max:</strong> {max} °C </p>
       </div>
     </div>
-    <Link to="/">
-      <button>Back</button>
-    </Link>
+    <div className="backBtn">
+      <Link to="/">
+        <button>Back</button>
+      </Link>
+    </div>
     </>
   )
 }
