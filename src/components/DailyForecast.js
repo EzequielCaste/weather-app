@@ -11,7 +11,7 @@ export const DailyForecast =  ({data}) => {
 
   if ( !dataItem ) {
     return (
-      <Redirect to="/weather-app" />
+      <Redirect to={process.env.PUBLIC_URL + '/'} />
     )
   }
     

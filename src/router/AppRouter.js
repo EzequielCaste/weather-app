@@ -13,8 +13,7 @@ export const AppRouter = ({data}) => {
         <Route exact path={process.env.PUBLIC_URL + '/'}>
           <WeeklyForecast data={data} />
         </Route> 
-        <Route path={process.env.PUBLIC_URL + '/:day'} children={ <DailyForecast data={data} />} />  
-        <Redirect to={process.env.PUBLIC_URL + '/'}  />
+        <Route path={process.env.PUBLIC_URL + '/:day'} children={ <DailyForecast data={data} />} />          
       
       </Switch>
     </div>
