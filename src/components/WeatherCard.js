@@ -15,7 +15,7 @@ export const WeatherCard = ({id, data}) => {
   
   return (
     <>
-    <Link style={style} to={`${id}`}>
+    <Link style={style} to={`/weather-app/${id}`}>
       <div className="card">
         <div className="title">{day}</div>      
         <div className="img-day">

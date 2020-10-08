@@ -8,10 +8,10 @@ export const AppRouter = ({data}) => {
     <Router>
     <div className="container">
       <Switch>      
-        <Route exact path="/">
+        <Route exact path="/weather-app">
           <WeeklyForecast data={data} />
         </Route> 
-        <Route path="/:day" children={ <DailyForecast data={data} />} />       
+        <Route path="/weather-app/:day" children={ <DailyForecast data={data} />} />       
       
       </Switch>
     </div>

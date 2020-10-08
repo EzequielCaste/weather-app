@@ -9,7 +9,7 @@ export const DailyForecast =  ({data}) => {
 
   if ( !dataItem ) {
     return (
-      <Redirect to="/" />
+      <Redirect to="/weather-app" />
     )
   }
     
@@ -34,7 +34,7 @@ export const DailyForecast =  ({data}) => {
       </div>
     </div>
     <div className="backBtn">
-      <Link to="/">
+      <Link to="/weather-app">
         <button>Back</button>
       </Link>
     </div>
