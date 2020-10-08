@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Redirect, useParams } from 'react-router-dom';
 
-export const DailyForecast =  ({data}) => { 
+export const DailyForecast =  ({data}) => {   
 
   let { day } = useParams();   
 
   const dataItem = data.daily.filter( item => item.dt === Number(day))[0];
+
+  if ( !dataItem ) {
+    return (
+      <Redirect to="/" />
+    )
+  }
     
   const {humidity, pressure} = dataItem;
   const {min,max} = dataItem.temp;

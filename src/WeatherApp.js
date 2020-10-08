@@ -17,13 +17,11 @@ async function getAddress() {
   const position = await getCoordinates(); 
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude; 
-
   return {
     latitude,
     longitude
   };  
 }
-
 
 export const WeatherApp = () => {   
 
