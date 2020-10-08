@@ -1,3 +1,11 @@
+# React Weather App
+
+[Demo](https://ezequielcaste.github.io/weather-app/)
+
+A great way to learn React if by building apps. With this weather app I learned about React Router, API Fetch, Async/Await and Lifting State.
+
+![Imgur](https://i.imgur.com/npGBcuq.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
