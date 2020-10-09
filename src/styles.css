@@ -18,8 +18,7 @@ body {
   display: flex;
   justify-content: center;
 }
-.backBtn button {
- 
+.backBtn button { 
   color: white;  
   outline: none;
   border: 0;
@@ -59,11 +58,15 @@ body {
 .card {  
   border: 1px solid #ccC;
 }
+.title {
+  text-align: center;
+  font-size: 1.1em;
+}
 .temps {  
-  font-size: 0.7em;
+  font-size: 0.9em;
 }
 .temps p { 
-  margin:0;
+  margin:5px 0;
 }
 .weather-detail {
   overflow: auto;

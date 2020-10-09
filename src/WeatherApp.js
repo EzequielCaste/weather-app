@@ -30,16 +30,11 @@ export const WeatherApp = () => {
       } catch (error) {
         console.log(error);
       }   
-      fetchData(loc).then( data => {
-        data.daily.shift()
-        data.daily.pop()
-        data.daily.pop()
+      fetchData(loc).then( data => {        
         setData(data);
       });
     })   
   }, []);
-
-  console.log(data);
 
   return (
     <>

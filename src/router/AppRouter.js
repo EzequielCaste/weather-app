@@ -5,7 +5,12 @@ import { WeeklyForecast } from '../components/WeeklyForecast';
 import { config } from 'dotenv';
 config();
 
-export const AppRouter = ({data}) => {    
+export const AppRouter = ({data}) => {   
+  
+  data[0].daily.shift();
+  data[0].daily.pop();
+  data[0].daily.pop();
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
     <div className="container">
@@ -13,7 +18,7 @@ export const AppRouter = ({data}) => {
         <Route exact path='/'>
           <WeeklyForecast data={data} />
         </Route> 
-        <Route path='/:day' children={ <DailyForecast />} />          
+        <Route path='/:day' children={ <DailyForecast data={data} />} />          
       
       </Switch>
     </div>

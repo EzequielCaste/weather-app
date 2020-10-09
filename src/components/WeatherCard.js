@@ -4,8 +4,6 @@ import { config } from 'dotenv';
 config();
 
 export const WeatherCard = ({id, data}) => {
-
-  //console.log(data, id);
  
   const {min,max} = data.temp;
   const {icon} = data.weather[0];
@@ -18,6 +16,9 @@ export const WeatherCard = ({id, data}) => {
     textDecoration: 'none',
     color: '#000'
   }
+
+  const {humidity, pressure} = data;
+  
   
   return (
     <>
@@ -28,8 +29,10 @@ export const WeatherCard = ({id, data}) => {
           <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="weather"/>
         </div>
         <div className="temps">
-          <p className="min">Min: {min} °C</p>
-          <p className="max">Max: {max} °C</p>
+          <p>Min: {Math.round(min)} °C</p>
+          <p>Max: {Math.round(max)} °C</p>
+          <p>Humidity: {humidity}%</p>
+          <p>Pressure: {pressure}hPa</p>
         </div>
       </div>
     </Link>
