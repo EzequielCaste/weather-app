@@ -10,7 +10,7 @@ async function getData() {
 
   const {latitude: lat, longitude: lon} = JSON.parse(localStorage.getItem('location'));
 
-  const url =  `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
+  const url =  `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
   
   const resp = await fetch(url);
   const data = await resp.json();
