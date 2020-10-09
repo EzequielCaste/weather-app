@@ -13,7 +13,7 @@ export const AppRouter = ({data}) => {
         <Route exact path='/'>
           <WeeklyForecast data={data} />
         </Route> 
-        <Route path='/:day' children={ <DailyForecast data={data} />} />          
+        <Route path='/:day' children={ <DailyForecast />} />          
       
       </Switch>
     </div>

@@ -24,12 +24,22 @@ export const WeatherApp = () => {
   const [data, setData] = useState('');
 
   useEffect(() => {    
-    getAddress().then( (loc) => {     
+    getAddress().then( (loc) => {  
+      try {
+        localStorage.setItem('location', JSON.stringify(loc));
+      } catch (error) {
+        console.log(error);
+      }   
       fetchData(loc).then( data => {
+        data.daily.shift()
+        data.daily.pop()
+        data.daily.pop()
         setData(data);
       });
     })   
-  }, [])
+  }, []);
+
+  console.log(data);
 
   return (
     <>

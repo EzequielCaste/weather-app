@@ -4,11 +4,15 @@ import { config } from 'dotenv';
 config();
 
 export const WeatherCard = ({id, data}) => {
+
+  //console.log(data, id);
  
   const {min,max} = data.temp;
   const {icon} = data.weather[0];
 
-  const day = new Date(data.dt*1000).toDateString().substring(0,3)
+  const day = new Date(data.dt*1000).toDateString().substring(0,3);
+
+  const linkId = new Date(data.dt*1000).toISOString().substring(0,10);
 
   const style = {
     textDecoration: 'none',
@@ -17,7 +21,7 @@ export const WeatherCard = ({id, data}) => {
   
   return (
     <>
-    <Link style={style} to={`/${id}`}>
+    <Link style={style} to={`/${linkId}`}>
       <div className="card">
         <div className="title">{day}</div>      
         <div className="img-day">

@@ -79,6 +79,24 @@ body {
   margin-top: 10px;
   text-align: center;
 }
+.weather-detail li {
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  margin-top: 5px;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.weather-detail img {
+  height: 24px;
+}
+.weather-detail a {
+  color: black;
+}
+.weather-detail a:hover {
+  text-decoration: none;
+}
 .img-detail {
   display: flex;
   justify-content: center;
