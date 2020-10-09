@@ -78,7 +78,7 @@ export const DailyForecast =  () => {
     { 
       dataItem.map( hourly => (
 
-        <li key={hourly.dt}>{moment(hourly.dt_txt).format("LT")} <img src={`http://openweathermap.org/img/wn/${hourly.weather[0].icon}@2x.png`} alt="weather"/>{} {hourly.main.temp} °C</li>
+        <li key={hourly.dt}>{moment(hourly.dt_txt).format("LT")} <img src={`https://openweathermap.org/img/wn/${hourly.weather[0].icon}@2x.png`} alt="weather"/>{} {hourly.main.temp} °C</li>
 
 
       ))
