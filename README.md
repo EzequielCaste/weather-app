@@ -2,7 +2,7 @@
 
 [Demo](https://ezequielcaste.github.io/weather-app/)
 
-A great way to learn React if by building apps. With this weather app I learned about React Router, API Fetch, Async/Await and Lifting State.
+A great way to learn React is by building apps. With this weather app I learned about React Router, API Fetch, Async/Await and Lifting State.
 
 ![Imgur](https://i.imgur.com/npGBcuq.png)
 
