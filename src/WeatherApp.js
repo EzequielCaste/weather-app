@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { AppRouter } from './router/AppRouter';
 import { fetchData } from './helpers/fetchData';
 
+
 const getCoordinates = () => {
   return new Promise(function(resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject);
