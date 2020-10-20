@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { DailyForecast } from '../components/DailyForecast';
 import { WeeklyForecast } from '../components/WeeklyForecast';
 import { config } from 'dotenv';
+import { CurrentForecast } from '../components/CurrentForecast';
 config();
 
 export const AppRouter = ({data}) => {   
@@ -17,6 +18,7 @@ export const AppRouter = ({data}) => {
       <Switch>      
         <Route exact path='/'>
           <WeeklyForecast data={data} />
+          <CurrentForecast {...data} />
         </Route> 
         <Route path='/:day' children={ <DailyForecast data={data} />} />          
       
