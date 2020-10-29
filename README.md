@@ -1,6 +1,6 @@
 # React Weather App
 
-[Demo](https://ezequielcaste.github.io/weather-app/)
+[Demo](https://weather-app-ecaste.vercel.app/)
 
 A great way to learn React is by building apps. With this weather app I learned about React Router, API Fetch, Async/Await and Lifting State.
 
